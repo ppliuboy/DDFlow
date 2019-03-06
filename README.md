@@ -43,7 +43,7 @@ Check [models](./models) for our pre-trained models on different datasets.
 If you find DDFlow useful in your research, please consider citing:
 
     @inproceedings{Liu:2019:DDFlow, 
-    title = {DDFlow: Learning Optical Flow with Unlabeled Data Distillation}, 
+    title = {{DDFlow: Learning Optical Flow with Unlabeled Data Distillation}}, 
     author = {Pengpeng Liu and Irwin King and Michael R. 
     Lyu and Jia Xu}, 
     booktitle = {AAAI}, 
@@ -51,4 +51,4 @@ If you find DDFlow useful in your research, please consider citing:
     }
 
 ## Acknowledgement
-Part of codes are adapted from [UnFlow](https://github.com/simonmeister/UnFlow), we thanks for their contributions.
+Part of codes are adapted from [PWC-Net](https://github.com/NVlabs/PWC-Net) and [UnFlow](https://github.com/simonmeister/UnFlow), we thank the authors for their contributions.
