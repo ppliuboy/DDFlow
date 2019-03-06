@@ -1,6 +1,6 @@
 # DDFlow： Learning Optical Flow with Unlabeled Data Distillation 
 
-The official tensorflow implementation of DDFlow (AAAI 2019)
+The official Tensorflow implementation of DDFlow (AAAI 2019)
 
 ![](./images/cave_3.gif)
 
@@ -44,11 +44,9 @@ If you find DDFlow useful in your research, please consider citing:
 
     @inproceedings{Liu:2019:DDFlow, 
     title = {{DDFlow: Learning Optical Flow with Unlabeled Data Distillation}}, 
-    author = {Pengpeng Liu and Irwin King and Michael R. 
-    Lyu and Jia Xu}, 
+    author = {Pengpeng Liu and Irwin King and Michael R. Lyu and Jia Xu}, 
     booktitle = {AAAI}, 
-    year = {2019} 
-    }
+    year = {2019}}
 
 ## Acknowledgement
-Part of codes are adapted from [PWC-Net](https://github.com/NVlabs/PWC-Net) and [UnFlow](https://github.com/simonmeister/UnFlow), we thank the authors for their contributions.
+Part of our codes are adapted from [PWC-Net](https://github.com/NVlabs/PWC-Net) and [UnFlow](https://github.com/simonmeister/UnFlow), we thank the authors for their contributions.
