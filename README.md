@@ -22,7 +22,7 @@ Please refer to the configuration file template [config](config/config.ini) for 
 - Here we choose KITTI 2015 dataset as an example. Other datasets have similar training procedures. **If you want to fully reproduce the results from scratch, please follow the training procedure in the paper.**
 - To reduce computation cost, we fix teacher model and pre-compute optical flow and occlusion map in this implementation, which is a little different from the paper implementation. Under such setting, we can achieve similar performance with much less computation cost.
 - **Step 1: Training without data distillation**
-    - Edit [config](config/config.ini), set *mode = test*.
+    - Edit [config](config/config.ini), set *mode = train*.
     - Set *training_mode=no_data_distillation*
     - Train the model without both census transform and occlusion handling for 100k steps (or more). Specially, edit function *create_train_op* and set *optim_loss* as losses['abs_robust_mean']['no_occlusion']. If you want to add regularization, please add it in the *optim_loss*.
     - If needing to restore model from a checkpoint, set *is_restore_model=True*, set *restore_model* to the directory of the checkpoint.
@@ -31,7 +31,7 @@ Please refer to the configuration file template [config](config/config.ini) for 
     - Edit [config](config/config.ini), set *mode=generate_fake_flow_occlusion*
     - Run the code to generate both flow and occlusion map.
 - **Step 3: Training with data distillation**
-    - Edit [config](config/config.ini), set *mode = test*.
+    - Edit [config](config/config.ini), set *mode = train*.
     - Set *training_mode=data_distillation*
     - Train the model with census transform, occlusion handling and data distillation for 300k steps (or more). Specially, edit function *create_train_op* and set *optim_loss* as losses['census']['occlusion']+losses['data_distillation'].
  
@@ -43,7 +43,7 @@ Check [models](./models) for our pre-trained models on different datasets.
 If you find DDFlow useful in your research, please consider citing:
 
     @inproceedings{Liu:2019:DDFlow, 
-    title = {{DDFlow: Learning Optical Flow with Unlabeled Data Distillation}}, 
+    title = {DDFlow: Learning Optical Flow with Unlabeled Data Distillation}, 
     author = {Pengpeng Liu and Irwin King and Michael R. Lyu and Jia Xu}, 
     booktitle = {AAAI}, 
     year = {2019}}
