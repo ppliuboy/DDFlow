@@ -33,7 +33,7 @@ Please refer to the configuration file template [config](config/config.ini) for 
 - **Step 3: Training with data distillation**
     - Edit [config](config/config.ini), set *mode = train*.
     - Set *training_mode=data_distillation*
-    - Train the model with census transform, occlusion handling and data distillation for 300k steps (or more). Specially, edit function *create_train_op* and set *optim_loss* as losses['census']['occlusion']+losses['data_distillation'].
+    - Train the model with census transform, occlusion handling and data distillation for 300k steps (or more). Specially, edit function *create_train_op* and set *optim_loss* as losses['census']['occlusion']+losses['distillation']['data_distillation'].
  
 
 ## Pre-trained Models
