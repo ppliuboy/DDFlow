@@ -5,7 +5,7 @@ The official Tensorflow implementation of DDFlow (AAAI 2019)
 ![](./images/cave_3.gif)
 
 ## Requirements
-- **Software:** The code was developed with python 2.7, opencv 3, tensorflow 1.8 and anaconda (python 2.7 version). It's okay to run without anaconda, but you may need to install the lacking packages by yourself when needed.
+- **Software:** The code was developed with python 2 or python 3, opencv 3, tensorflow 1.8 and anaconda. It's okay to run without anaconda, but you may need to install the lacking packages by yourself when needed.
 - **Hardware:**  GPU with memory 12G or more is recommended. We also implement the multi-gpu version. Please use multiple GPUs when available.
 
 ## Usage
