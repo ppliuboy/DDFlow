@@ -67,7 +67,7 @@ def estimator(x1, x2, flow, train=True, trainable=True, reuse=None, regularizer=
     x2_warp = tf.nn.l2_normalize(x2_warp, axis=3)        
     d = 9
     
-    # choce 1: use tf.extract_image_patches, may not work for some tensorflow versions
+    # choice 1: use tf.extract_image_patches, may not work for some tensorflow versions
     x2_patches = tf.extract_image_patches(x2_warp, [1, d, d, 1], strides=[1, 1, 1, 1], rates=[1, 1, 1, 1], padding='SAME')
     
     # choice 2: use convolution, but is slower than choice 1
