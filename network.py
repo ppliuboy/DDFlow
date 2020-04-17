@@ -66,11 +66,16 @@ def estimator(x1, x2, flow, train=True, trainable=True, reuse=None, regularizer=
     x1 = tf.nn.l2_normalize(x1, axis=3)
     x2_warp = tf.nn.l2_normalize(x2_warp, axis=3)        
     d = 9
-    #x2_patches = tf.extract_image_patches(x2_warp, [1, d, d, 1], strides=[1, 1, 1, 1], rates=[1, 1, 1, 1], padding='SAME')
-    out_channels = d * d
-    w = tf.eye(out_channels*channel, dtype=tf.float32)
-    w = tf.reshape(w, (d, d, channel, out_channels*channel))
-    x2_patches = tf.nn.conv2d(x2_warp, w, strides=[1, 1, 1, 1], padding='SAME')
+    
+    # choce 1: use tf.extract_image_patches, may not work for some tensorflow versions
+    x2_patches = tf.extract_image_patches(x2_warp, [1, d, d, 1], strides=[1, 1, 1, 1], rates=[1, 1, 1, 1], padding='SAME')
+    
+    # choice 2: use convolution, but is slower than choice 1
+    # out_channels = d * d
+    # w = tf.eye(out_channels*channel, dtype=tf.float32)
+    # w = tf.reshape(w, (d, d, channel, out_channels*channel))
+    # x2_patches = tf.nn.conv2d(x2_warp, w, strides=[1, 1, 1, 1], padding='SAME')
+    
     x2_patches = tf.reshape(x2_patches, [-1, H, W, d, d, channel])
     x1_reshape = tf.reshape(x1, [-1, H, W, 1, 1, channel])
     x1_dot_x2 = tf.multiply(x1_reshape, x2_patches)
